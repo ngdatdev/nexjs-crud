@@ -4,6 +4,7 @@ import Table from "react-bootstrap/Table";
 import AddModal from "./create.modal";
 import { useState } from "react";
 import EditModal from "./update.modal";
+import Link from "next/link";
 
 interface IProps {
   users: IUser[];
@@ -52,7 +53,7 @@ const TableUser = (props: IProps) => {
                 <td>{user.username}</td>
                 <td>{user.name}</td>
                 <td>
-                  <Button>View</Button>
+                  <Link className="btn btn-info" href={`/users/${user.username}`} >View</Link>
                   <Button variant="warning" className="mx-2" onClick={() => handleUpdateModal(user)}>
                     Edit
                   </Button>
